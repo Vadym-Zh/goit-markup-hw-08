@@ -1,0 +1,28 @@
+//--- Глобальні налаштування ---//
+@import "./utils/variables";
+@import "./base/reset";
+@import "./utils/mixins";
+@import "./base/common";
+
+//--- Компоненти та функції ---//
+@import "./utils/hidden";
+@import "./components/container";
+@import "./utils/placeholders";
+@import "./components/title";
+@import "./components/button";
+@import "./components/socials";
+
+//--- Головна сторінка ---//
+@import "./layout/header";
+@import "./layout/hero";
+@import "./layout/benefits";
+@import "./layout/activity";
+@import "./layout/teem";
+@import "./layout/clients";
+@import "./layout/footer";
+
+// --- Сторінкак портфоліо --- //
+@import "./layout/gallery";
+
+//--- Модалка ---//
+@import "./components/modal";

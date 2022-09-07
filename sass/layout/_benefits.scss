@@ -1,0 +1,62 @@
+.benefits {
+  padding: 60px 0;
+  @include desktop {
+    padding: 94px 0;
+  }
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  &_subtitle {
+    margin: 0 0 10px;
+    @include fonts(null, $fs: 14px, $lh: 16px, $ls: 0.03em);
+    text-transform: uppercase;
+    color: var(--primary-title-color);
+  }
+}
+
+.benefits_items {
+  width: 100%;
+  @include mobile {
+    width: 450px;
+  }
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+  @include desktop {
+    width: calc((100% - 90px) / 4);
+  }
+  &::before {
+    content: "";
+    display: block;
+    height: 120px;
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--second-bg-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
+  }
+}
+
+.icon-antenna::before {
+  background-image: url(../img/ico-antenna.svg);
+}
+
+.icon-clock::before {
+  background-image: url(../img/ico-clock.svg);
+}
+
+.icon-diagram::before {
+  background-image: url(../img/ico-diagram.svg);
+}
+
+.icon-astronaut::before {
+  background-image: url(../img/ico-astronaut.svg);
+}
+
+.text {
+  @include fonts(null, $fs: 14px, $lh: 24px, $ls: 0.03em);
+}

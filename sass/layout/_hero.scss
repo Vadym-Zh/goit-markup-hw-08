@@ -1,0 +1,55 @@
+.hero {
+  padding: 118px 0;
+  @include desktop {
+    padding: 200px 0;
+    max-width: 1600px;
+  }
+  margin: 0 auto;
+  outline: 1px solid #000000;
+  background-color: #c4c4c4;
+  background-image: var(--bg-gradient), url(../img/header_bg_mob_x1.jpg);
+
+  @include retina {
+    background-image: var(--bg-gradient), url(../img/header_bg_mob_x2.jpg);
+  }
+
+  @include tablet {
+    background-image: var(--bg-gradient), url(../img/header_bg_tablet_x1.jpg);
+    @include retina {
+      background-image: var(--bg-gradient), url(../img/header_bg_tablet_x2.jpg);
+    }
+  }
+  @include desktop {
+    background-image: var(--bg-gradient), url(../img/header_bg_desktop_x1.jpg);
+    @include retina {
+      background-image: var(--bg-gradient), url(../img/header_bg_desktop_x2.jpg);
+    }
+  }
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &__title {
+    margin: 0 auto 30px;
+    max-width: 360px;
+
+    text-align: center;
+    @include fonts($fw: 900, $fs: 20px, $lh: 42px, $ls: 0.06em);
+    @include mobile {
+      @include fonts($fw: 900, $fs: 26px, $lh: 42px, $ls: 0.06em);
+    }
+    @include desktop {
+      @include fonts($fw: 900, $fs: 44px, $lh: 60px, $ls: 0.06em);
+      max-width: 696px;
+    }
+
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  &__button {
+    display: block;
+    padding: 10px 24px;
+    @include desktop {
+      padding: 10px 32px;
+    }
+  }
+}

@@ -1,0 +1,233 @@
+.header {
+  position: relative;
+  border-bottom: 1px solid #ececec;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include desktop {
+      justify-content: space-around;
+    }
+  }
+}
+
+/* logo */
+.logo {
+  font-family: "Raleway";
+  @include fonts($fw: 700, $fs: 24px, $lh: 28px, $ls: 0.03em);
+  // @include fonts($fw: 700, $fs: 26px, $lh: 31px, $ls: 0.03em);
+  color: #000000;
+  &-part {
+    color: #2196f3;
+  }
+  @include desktop {
+    font-size: 26px;
+    line-height: 31px;
+  }
+}
+
+.mobile {
+  @include tablet {
+    display: none;
+  }
+}
+
+.menu-toggle {
+  display: inline-flex;
+  margin: 0;
+  padding: 10px 0;
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    fill: var(--active-link-color);
+  }
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: var(--primary-bg-color);
+  transform: translateX(100%);
+  transition-property: transform;
+  @extend %transition;
+
+  &.is-open {
+    transform: translateX(0);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menu-toggle {
+    position: absolute;
+    right: 15px;
+    top: 0;
+  }
+}
+
+.mobile-menu {
+  margin-bottom: 306px;
+  &__items {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+  &__link {
+    @include fonts($fw: 500, $fs: 40px, $lh: 47px, $ls: 0.02em);
+    color: #000000;
+
+    transition-property: color;
+    @extend %transition;
+  }
+  &__link:hover,
+  &__link:focus {
+    color: var(--active-link-color);
+  }
+}
+
+.mobile-contacts {
+  margin-bottom: 64px;
+}
+.mobile-contacts__items {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  .tell {
+    @include fonts($fw: 500, $fs: 27px, $lh: 40px, $ls: 0.02em);
+    color: #2196f3;
+    @include mobile {
+      font-size: 34px;
+    }
+  }
+  .mail {
+    @include fonts($fw: 500, $fs: 24px, $lh: 28px, $ls: 0.02em);
+    color: var(--primary-text-color);
+  }
+}
+
+.mobile-soc {
+  display: flex;
+}
+.mobile-soc__items {
+  position: relative;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &:not(:first-child)::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 22px;
+    background-color: rgba(33, 33, 33, 0.2);
+    position: absolute;
+    left: -10px;
+    bottom: 0;
+  }
+}
+.mobile-soc__link {
+  @include fonts($fw: 500, $fs: 11px, $lh: 22px, $ls: 0.02em);
+  color: #2196f3;
+  @include mobile {
+    font-size: 18px;
+  }
+}
+
+.tablet-menu {
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}
+
+/* nav */
+
+.nav {
+  &__list {
+    display: flex;
+    column-gap: 50px;
+    margin-left: 90px;
+  }
+  &__items {
+    position: relative;
+  }
+  &__link {
+    @include fonts($fw: 500, $fs: 14px, $lh: 16px, $ls: 0.02em);
+    color: var(--primary-title-color);
+
+    padding: 32px 2px;
+    display: flex;
+  }
+}
+
+.current--link {
+  color: var(--active-link-color);
+  @include tablet {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 4px;
+
+      border-radius: 2px;
+      background-color: var(--active-link-color);
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+// /* contacts */
+
+.header__link {
+  transition-property: color;
+  @extend %transition;
+  &:hover,
+  &:focus {
+    color: var(--active-link-color);
+  }
+}
+
+.contacts__list {
+  @include desktop {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.contacts__items:not(:last-child) {
+  margin-bottom: 10px;
+  @include desktop {
+    margin-right: 50px;
+  }
+}
+
+.contacts__link {
+  @include fonts($fw: 500, $fs: 12px, $lh: 14px, $ls: 0.02em);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include desktop {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    gap: 10px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  color: var(--primary-text-color);
+}
+
+.contacts__icon {
+  fill: currentColor;
+}

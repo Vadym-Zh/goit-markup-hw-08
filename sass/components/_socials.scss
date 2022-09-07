@@ -1,0 +1,22 @@
+.soc {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  &__link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: var(--icon-color);
+
+    transition-property: fill, background-color;
+    @extend %transition;
+  }
+  &__link:hover,
+  &__link:focus {
+    background-color: var(--active-link-color);
+    fill: var(--primary-bg-color);
+  }
+}

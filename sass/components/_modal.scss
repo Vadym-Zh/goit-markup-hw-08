@@ -1,0 +1,227 @@
+.backdrop {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  transition-property: opacity, transform;
+  @extend %transition;
+}
+
+.form {
+  padding: 40px;
+  width: 85vw;
+  min-height: 609px;
+  @include mobile {
+    width: 450px;
+  }
+  @include desktop {
+    width: 528px;
+    min-height: 581px;
+  }
+  background-color: var(--primary-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form__close {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background: transparent;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  &-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-property: fill;
+    @extend %transition;
+  }
+  &:hover &-icon,
+  &:focus &-icon {
+    fill: var(--active-link-color);
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100%);
+}
+
+.modal__title {
+  text-align: center;
+  @include fonts($fw: 700, $fs: 20px, $lh: 30px, $ls: 0.03em);
+  @include desktop {
+    line-height: 23px;
+  }
+  color: #212121;
+  margin-bottom: 12px;
+}
+
+.input-field:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.input-form {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 12px 12px 42px;
+
+  @include fonts($fw: 400, $fs: 12px, $lh: 14px, $ls: 0.01em);
+
+  transition-property: border-color;
+  @extend %transition;
+  &:focus {
+    border-color: var(--active-link-color);
+    outline: none;
+  }
+  &:focus + .input-icon {
+    fill: var(--active-link-color);
+  }
+  &::placeholder {
+    @include fonts($fw: 400, $fs: 12px, $lh: 14px, $ls: 0.01em);
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.input-title {
+  @include fonts(null, $fs: 12px, $lh: 14px, $ls: 0.01em);
+  color: #757575;
+
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal-text {
+  display: block;
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition-property: border-color;
+  @extend %transition;
+
+  @include fonts(null, $fs: 12px, $lh: 14px, $ls: 0.01em);
+  color: rgba(117, 117, 117, 1);
+  &:focus {
+    border-color: var(--active-link-color);
+    outline: none;
+  }
+  &::placeholder {
+    @include fonts($fw: 400, $fs: 12px, $lh: 14px, $ls: 0.01em);
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition-property: fill;
+  @extend %transition;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.policy-block {
+  // padding-left: 14px;
+  margin-bottom: 30px;
+}
+
+.policy-text {
+  @include fonts(400, $fs: 12px, $lh: 14px, $ls: 0.03em);
+  @include desktop{
+    font-size: 14px;
+    line-height: 24px;
+  }
+  
+  display: flex;
+  align-items: center;
+  span {
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition-property: background-color, border-color;
+    @extend %transition;
+
+    display: flex;
+    align-items: center;
+  }
+
+  flex-wrap: wrap;
+  @include mobile {
+    flex-wrap: nowrap;
+  }
+}
+
+.icon-check {
+  fill: transparent;
+  transition-property: fill;
+  @extend %transition;
+}
+.input-policy {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  &:checked + .policy-text span {
+    background-color: var(--active-link-color);
+    border-color: var(--active-link-color);
+  }
+  &:hover + .policy-text span,
+  &:focus + .policy-text span {
+    border-color: var(--active-link-color);
+  }
+  &:checked + .policy-text .icon-check {
+    fill: var(--primary-bg-color);
+  }
+}
+
+.policy-link {
+  color: #2196f3;
+  text-decoration: none;
+
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--active-link-color);
+
+    position: absolute;
+    left: 0;
+    bottom: 23%;
+  }
+}
+
+.modal__button {
+  display: block;
+  padding: 10px 52px;
+}
