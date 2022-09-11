@@ -12,21 +12,28 @@
 
 .form {
   padding: 40px;
-  width: 85vw;
-  min-height: 609px;
-  @include mobile {
-    width: 450px;
-  }
-  @include desktop {
-    width: 528px;
-    min-height: 581px;
-  }
+  // width: 85vw;
+  // min-height: 609px;
+  width: 100%;
+  // height: 100%;
   background-color: var(--primary-bg-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
   position: absolute;
+  @include mobile {
+    width: 450px;
+    min-height: 609px;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+  }
+  @include desktop {
+    width: 528px;
+    min-height: 581px;
+  }
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -149,16 +156,19 @@
 
 .policy-block {
   // padding-left: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
+  @include mobile{
+    margin-bottom: 30px;
+  }
 }
 
 .policy-text {
-  @include fonts(400, $fs: 12px, $lh: 14px, $ls: 0.03em);
-  @include desktop{
-    font-size: 14px;
-    line-height: 24px;
-  }
+  @include fonts(400, $fs: 10px, $lh: 14px, $ls: 0.03em);
   
+  @include mobile {
+    font-size: 12px;
+  }
+
   display: flex;
   align-items: center;
   span {

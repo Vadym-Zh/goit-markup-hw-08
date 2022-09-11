@@ -223,6 +223,9 @@ textarea {
   background-color: var(--primary-bg-color);
   transform: translateX(100%);
   transition-property: transform;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .menu-container.is-open {
   transform: translateX(0);
@@ -236,9 +239,6 @@ textarea {
   top: 0;
 }
 
-.mobile-menu {
-  margin-bottom: 306px;
-}
 .mobile-menu__items:not(:last-child) {
   margin-bottom: 32px;
 }
@@ -380,6 +380,7 @@ textarea {
 @media screen and (min-width: 1200px) {
   .contacts__items:not(:last-child) {
     margin-right: 50px;
+    margin-bottom: 0;
   }
 }
 
@@ -507,6 +508,12 @@ textarea {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-title-color);
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .benefits_subtitle {
+    text-align: start;
+  }
 }
 
 .benefits_items {
@@ -958,6 +965,9 @@ textarea {
 .cards__link {
   display: block;
   transition-property: box-shadow;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .cards__link:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -992,6 +1002,7 @@ textarea {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: transparent;
+  flex-grow: 1;
 }
 .cards__title {
   margin-bottom: 4px;
@@ -999,6 +1010,18 @@ textarea {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--primary-title-color);
+}
+@media screen and (min-width: 768px) {
+  .cards__title {
+    width: 270px;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cards__title {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
 }
 .cards__text {
   font-weight: 400;
@@ -1024,8 +1047,7 @@ textarea {
 
 .form {
   padding: 40px;
-  width: 85vw;
-  min-height: 609px;
+  width: 100%;
   background-color: var(--primary-bg-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -1037,6 +1059,7 @@ textarea {
 @media screen and (min-width: 480px) {
   .form {
     width: 450px;
+    min-height: 609px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1198,22 +1221,26 @@ textarea {
 }
 
 .policy-block {
-  margin-bottom: 30px;
+  margin-bottom: 14px;
+}
+@media screen and (min-width: 480px) {
+  .policy-block {
+    margin-bottom: 30px;
+  }
 }
 
 .policy-text {
   font-weight: 400;
-  font-size: 12px;
-  line-height: 1.1666666667;
+  font-size: 10px;
+  line-height: 1.4;
   letter-spacing: 0.03em;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 480px) {
   .policy-text {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 12px;
   }
 }
 .policy-text span {
