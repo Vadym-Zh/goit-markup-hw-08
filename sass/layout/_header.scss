@@ -4,9 +4,13 @@
   &__container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
+    @include tablet {
+      column-gap: 90px;
+    }
     @include desktop {
-      justify-content: space-around;
+      column-gap: normal;
+      // justify-content: space-between;
     }
   }
 }
@@ -27,6 +31,7 @@
 }
 
 .mobile {
+  margin-left: auto;
   @include tablet {
     display: none;
   }
@@ -61,6 +66,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  // column-gap: 90px;
 
   &.is-open {
     transform: translateX(0);
@@ -96,6 +102,12 @@
   }
 }
 
+.desktop-menu {
+  @include desktop {
+    margin-left: 90px;
+  }
+}
+
 .mobile-contacts {
   margin-bottom: 64px;
 }
@@ -113,6 +125,12 @@
   .mail {
     @include fonts($fw: 500, $fs: 24px, $lh: 28px, $ls: 0.02em);
     color: var(--primary-text-color);
+  }
+}
+
+.desktop-contacts{
+  @include desktop{
+    margin-left: auto;
   }
 }
 
@@ -156,7 +174,7 @@
   &__list {
     display: flex;
     column-gap: 50px;
-    margin-left: 90px;
+    // margin-left: 90px;
   }
   &__items {
     position: relative;
@@ -209,7 +227,7 @@
 .contacts__items:not(:last-child) {
   margin-bottom: 10px;
   @include desktop {
-    margin-right: 50px;
+    margin-right: 30px;
     margin-bottom: 0;
   }
 }
